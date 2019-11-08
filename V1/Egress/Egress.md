@@ -34,7 +34,7 @@ Complete the following to create new egress endpoints:
 curl -v -d "@Storage_PeriodicEgressEndspoints.config.json" -H "Content-Type: application/json" -X POST "http://localhost:5590/api/v1/configuration/storage/periodicegressendpoints"
 ```
 
-> **Note** The @ symbol is a required prefix for the above command.
+> **Note:** The @ symbol is a required prefix for the above command.
 
 ### Parameters
 
@@ -196,7 +196,7 @@ Certain HTTP failures during egress will result in a retry. The Edge Data Store 
 
 For data collection and egress, in-memory and on-disk storage are used to track the last successfully-egressed data event, per stream. Data is egressed in order and includes future events.
 
-> **Note**  When an event with a future timestamp is successfully egressed, only values after the associated timestamp of that event will be egressed.
+> **Note:** When an event with a future timestamp is successfully egressed, only values after the associated timestamp of that event will be egressed.
 
 ## Destination Preparation
 
@@ -221,4 +221,4 @@ To prepare a PI Server to receive OMF messages from EDS, a PI Web API OMF endpoi
     - Account used in an egress configuration needs permissions to create AF elements and element templates, as well as PI points
 1. Configure PI Web API to use *Basic* authentication
 
-> **Note**  The certificate used by PI Web API must be trusted by the device running EDS, otherwise the egress configuration *ValidateEndpointCertificate* property needs to be set to false (this can be the case with a **self-signed certificate** but should only be used for testing purposes).
+> **Note:** The certificate used by PI Web API must be trusted by the device running EDS, otherwise the egress configuration *ValidateEndpointCertificate* property needs to be set to false (this can be the case with a **self-signed certificate** but should only be used for testing purposes).
